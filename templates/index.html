@@ -1,0 +1,47 @@
+{% extends '_base.html' %}
+{% block content %}
+<div class="col-md-6 margin-bottom-20">
+    <ul class="nav nav-tabs nav-justified" id="myTabs-justified" role="tablist">
+        <li role="presentation" class="active"><a href="#home-justified" id="home-tab-justified" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Пользователь</a></li>
+        <li role="presentation"><a href="#profile-justified" role="tab" id="profile-tab-justified" data-toggle="tab" aria-controls="profile">Жилищник</a></li>
+    </ul>
+    <!-- /.nav-tabs -->
+    <div class="tab-content" id="myTabContent-justified">
+        <div class="tab-pane fade in active" role="tabpanel" id="home-justified" aria-labelledby="home-tab-justified">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Ваша почта</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Ваш пароль</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-info btn-sm waves-effect waves-light">Вход</button>
+            </div>
+            <div class="form-group">
+                <a style="text-decoration: underline!important;" href="#">Регистрация</a>
+            </div>
+        </div>
+        <div class="tab-pane fade" role="tabpanel" id="profile-justified" aria-labelledby="profile-tab-justified">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Ваша почта</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Ваш пароль</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-info btn-sm waves-effect waves-light">Вход</button>
+            </div>
+            <div class="form-group">
+                <a style="text-decoration: underline!important;" href="#">Регистрация</a>
+            </div>
+        </div>
+    </div>
+    <!-- /.tab-content -->
+</div>
+{% endblock %}
+{% block popups %}
+{% endblock %}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>needsomedata</title>
+	<!-- Main Styles -->
+	<link rel="stylesheet" href="/static/assets/styles/style.min.css">
+	<!-- mCustomScrollbar -->
+	<link rel="stylesheet" href="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+	<!-- Waves Effect -->
+	<link rel="stylesheet" href="/static/assets/plugin/waves/waves.min.css">
+	<!-- Sweet Alert -->
+	<link rel="stylesheet" href="/static/assets/plugin/sweet-alert/sweetalert.css">
+	<!-- Percent Circle -->
+	<link rel="stylesheet" href="/static/assets/plugin/percircle/css/percircle.css">
+	<!-- Chartist Chart -->
+	<link rel="stylesheet" href="/static/assets/plugin/chart/chartist/chartist.min.css">
+	<!-- FullCalendar -->
+	<link rel="stylesheet" href="/static/assets/plugin/fullcalendar/fullcalendar.min.css">
+	<link rel="stylesheet" href="/static/assets/plugin/fullcalendar/fullcalendar.print.css" media='print'>
+	<!-- Color Picker -->
+	<link rel="stylesheet" href="/static/assets/color-switcher/color-switcher.min.css">
+</head>
+
+<body>
+<div class="main-menu">
+	<header class="header">
+		<a href="index.html" class="logo">PMTA-19</a>
+		<button type="button" class="button-close fa fa-times js__menu_close"></button>
+		<div class="user">
+			<a href="#" class="avatar"><img src="http://placehold.it/80x80" alt=""><span class="status online"></span></a>
+			<h5 class="name"><a href="javascript:"></a></h5>
+			<h5 class="position">Жилищник</h5>
+			<!-- /.control-wrap -->
+		</div>
+		<!-- /.user -->
+	</header>
+	<!-- /.header -->
+	<div class="content">
+
+		<div class="navigation">
+			<h5 class="title">Меню</h5>
+			<!-- /.title -->
+
+			<!-- /.menu js__accordion -->
+		</div>
+		<!-- /.navigation -->
+	</div>
+	<!-- /.content -->
+</div>
+<!-- /.main-menu -->
+
+<div class="fixed-navbar">
+	<div class="pull-left">
+		<!-- /.page-title -->
+	</div>
+	<!-- /.pull-left -->
+
+	<!-- /.pull-right -->
+</div>
+<!-- /.fixed-navbar -->
+
+<div id="wrapper">
+	<div class="main-content">
+		<div class="row small-spacing">
+			<div class="col-xs-12">
+				<div class="box-content">
+                    {% block content %}
+                    {% endblock %}
+				</div>
+				<!-- /.box-content -->
+			</div>
+			<!-- /.col-lg-6 col-xs-12 -->
+		</div>
+		<!-- /.row -->
+		<footer class="footer">
+{#			<ul class="list-inline">#}
+{#				<li>2016 © NinjaAdmin.</li>#}
+{#				<li><a href="#">Privacy</a></li>#}
+{#				<li><a href="#">Terms</a></li>#}
+{#				<li><a href="#">Help</a></li>#}
+{#			</ul>#}
+		</footer>
+	</div>
+	<!-- /.main-content -->
+    {% block popups %}
+    {% endblock %}
+</div><!--/#wrapper -->
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="/static/assets/script/html5shiv.min.js"></script>
+		<script src="/static/assets/script/respond.min.js"></script>
+	<![endif]-->
+	<!--
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/static/assets/scripts/jquery.min.js"></script>
+	<script src="/static/assets/scripts/modernizr.min.js"></script>
+	<script src="/static/assets/plugin/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="/static/assets/plugin/nprogress/nprogress.js"></script>
+	<script src="/static/assets/plugin/sweet-alert/sweetalert.min.js"></script>
+	<script src="/static/assets/plugin/waves/waves.min.js"></script>
+	<!-- Full Screen Plugin -->
+	<script src="/static/assets/plugin/fullscreen/jquery.fullscreen-min.js"></script>
+
+	<!-- Percent Circle -->
+	<script src="/static/assets/plugin/percircle/js/percircle.js"></script>
+
+	<!-- Google Chart -->
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+	<!-- Chartist Chart -->
+	<script src="/static/assets/plugin/chart/chartist/chartist.min.js"></script>
+	<script src="/static/assets/scripts/chart.chartist.init.min.js"></script>
+
+	<!-- FullCalendar -->
+	<script src="/static/assets/plugin/moment/moment.js"></script>
+	<script src="/static/assets/plugin/fullcalendar/fullcalendar.min.js"></script>
+	<script src="/static/assets/scripts/fullcalendar.init.js"></script>
+
+	<script src="/static/assets/scripts/main.min.js"></script>
+</body>
+</html>

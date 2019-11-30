@@ -37,7 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
+    'main',
+    'imagekit',
+    'smart_selects',
+    'ckeditor',
+    'ckeditor_uploader',
+    'djeym',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'urban.urls'
@@ -55,7 +61,7 @@ ROOT_URLCONF = 'urban.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -104,7 +110,17 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+if os.environ.get('LANG', "en") == "en":
+    LANGUAGE_CODE = 'en'
+else:
+    LANGUAGE_CODE = 'ru' # default language
+
+_ = lambda s: s
+
+LANGUAGES = (
+    ('ru', _('RU')),
+    ('en', _('EN')),
+)
 
 TIME_ZONE = 'UTC'
 
@@ -119,3 +135,68 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# django-ckeditor
+CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_FILENAME_GENERATOR = 'djeym.utils.get_filename'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_ALLOW_NONIMAGE_FILES = False  # Only image files. (На Ваше усмотрение)
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 400,
+        'width': '100%',
+    },
+    'djeym': {
+        'toolbar': 'full',
+        'height': 400,
+        'width': 362,
+        'colorButton_colors': 'FFFFFF,F08080,CD5C5C,FF0000,FF1493,C71585,800080,F0E68C,'
+                              'BDB76B,6A5ACD,483D8B,3CB371,2E8B57,9ACD32,008000,808000,'
+                              '20B2AA,008B8B,00BFFF,F4A460,CD853F,A52A2A,708090,34495e,'
+                              '999966,333333,82cdff,1e98ff,177bc9,0e4779,56db40,1bad03,'
+                              '97a100,595959,b3b3b3,f371d1,b51eff,793d0e,ffd21e,ff931e,'
+                              'e6761b,ed4543',
+        'colorButton_enableAutomatic': False,
+        'colorButton_enableMore': True
+    }
+}
+
+# Add your URL
+LOGIN_URL = '/admin/'
+
+# django-smart-selects
+# https://github.com/digi604/django-smart-selects
+JQUERY_URL = False
+USE_DJANGO_JQUERY = True
+
+# API key - Used only in the paid API version.
+# You can get the key in the developer’s office - https://developer.tech.yandex.ru/
+# ( API-ключ - Используется только в платной версии API.
+#   Получить ключ можно в кабинете разработчика - https://developer.tech.yandex.ru/ )
+DJEYM_YMAPS_API_KEY = '77a90f7b-5d09-4238-8101-a48ec6e6ba16'
+
+# Map download mode. Default -> 'release'
+# (Режим загрузки карт.)
+# DJEYM_YMAPS_DOWNLOAD_MODE = 'debug'
+
+# Font Awesome, Material Design etc.
+# Default Font Awesome Free 5.3.1 - https://fontawesome.com
+# Example: ['/static/path/css/style.min.css']
+# Example: ['/static/path/js/script.min.js']
+# Only for admin panel and editor page. (Только для панели администратора и страницы редактора.)
+# For the site connect directly in templates. (Для сайта подключите непосредственно в шаблонах.)
+DJEYM_YMAPS_ICONS_FOR_CATEGORIES_CSS = []
+DJEYM_YMAPS_ICONS_FOR_CATEGORIES_JS = []
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, '..', 'static')
+STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

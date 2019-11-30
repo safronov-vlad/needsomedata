@@ -1,0 +1,18 @@
+[2019-11-30 15:31:09 +0300] [10899] [INFO] Starting gunicorn 20.0.3
+[2019-11-30 15:31:09 +0300] [10899] [INFO] Listening at: unix:/home/pweb/urban/urban/urban.sock (10899)
+[2019-11-30 15:31:09 +0300] [10899] [INFO] Using worker: sync
+[2019-11-30 15:31:09 +0300] [10903] [INFO] Booting worker with pid: 10903
+[2019-11-30 15:31:09 +0300] [10904] [INFO] Booting worker with pid: 10904
+[2019-11-30 15:31:09 +0300] [10905] [INFO] Booting worker with pid: 10905
+[2019-11-30 15:31:10 +0300] [10907] [INFO] Booting worker with pid: 10907
+[2019-11-30 15:31:10 +0300] [10908] [INFO] Booting worker with pid: 10908
+[2019-11-30 12:31:22 +0000] [10500] [INFO] Parent changed, shutting down: <Worker 10500>
+[2019-11-30 12:31:22 +0000] [10500] [INFO] Worker exiting (pid: 10500)
+[2019-11-30 12:31:24 +0000] [10501] [INFO] Parent changed, shutting down: <Worker 10501>
+[2019-11-30 12:31:24 +0000] [10505] [INFO] Parent changed, shutting down: <Worker 10505>
+[2019-11-30 12:31:24 +0000] [10501] [INFO] Worker exiting (pid: 10501)
+[2019-11-30 12:31:24 +0000] [10505] [INFO] Worker exiting (pid: 10505)
+[2019-11-30 12:31:25 +0000] [10504] [INFO] Parent changed, shutting down: <Worker 10504>
+[2019-11-30 12:31:25 +0000] [10504] [INFO] Worker exiting (pid: 10504)
+[2019-11-30 12:31:36 +0000] [10506] [INFO] Parent changed, shutting down: <Worker 10506>
+[2019-11-30 12:31:36 +0000] [10506] [INFO] Worker exiting (pid: 10506)

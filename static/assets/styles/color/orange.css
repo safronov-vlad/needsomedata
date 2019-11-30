@@ -2,21 +2,20 @@
 Version 2.0[Table of contents]
 -------------------------------------------------------------------------
 1. Globally Applied Styles
-2. Header
-3. User Main Menu
-4. Navigation
-5. Menu Active
-6. Fixed Navbar7. Footer
-8. Box Content
-9. Data Tables
-10. Inbox List
-11. Menu Mobile Button
-12. Notice
-13. Search Form
-14. Mail
-15. Login, Register, ... Form
-16. Pricing Plan
-17. Gallery
+2. Header Top
+3. Navigation Desktop
+4. Navigation Mobile
+5. Footer
+6. Box Content
+7. Data Tables
+8. Inbox List
+9. Menu Mobile Button
+10. Notice
+11. Search Form
+12. Mail
+13. Login, Register, ... Form
+14. Pricing Plan
+15. Gallery
 -------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
 1. Globally Applied Styles
@@ -39,101 +38,79 @@ a:focus {
 }
 /*---------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-2. Header
+2. Header Top
 */
-.header .logo {
-  color: #ffffff;
-  background: #fd1100;
-}
-/*---------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------
-3. User Main Menu
-*/
-.user .control-list a {
-  color: #435966;
-}
-.user .control-list a:hover {
-  color: #ff5722;
-}
-.user .name a {
-  color: #435966;
-}
-.user .name a:hover {
-  color: #ff5722;
-}
-/*---------------------------------------------------------------------*/
-/*-----------------------------------------------------------------------
-4. Navigation
-*/
-@media (min-width: 1025px) {
-  .navigation .menu a:hover {
-    color: #ff5722;
-  }
-  .navigation .menu a:hover i {
-    color: #ff5722;
-  }
-}
-.navigation .menu a.active,
-.navigation .menu a.current {
-  color: #ff5722;
-}
-.navigation .menu > li.current > a {
+.header-top {
+  height: 55px;
   background: #ff5722;
   color: #ffffff;
 }
-.navigation .menu > li.current > a > i {
+.header-top .ico-item {
   color: #ffffff;
 }
-.navigation .menu > li.current .current > a {
-  color: #ff5722;
+.header-top .ico-item:hover {
+  color: #ffffff;
 }
-.navigation .menu .waves-ripple {
-  background: -webkit-radial-gradient(rgba(255, 87, 34, 0.2) 0, rgba(255, 87, 34, 0.3) 40%, rgba(255, 87, 34, 0.4) 50%, rgba(255, 87, 34, 0.5) 60%, rgba(255, 87, 34, 0) 70%);
-  background: -o-radial-gradient(rgba(255, 87, 34, 0.2) 0, rgba(255, 87, 34, 0.3) 40%, rgba(255, 87, 34, 0.4) 50%, rgba(255, 87, 34, 0.5) 60%, rgba(255, 87, 34, 0) 70%);
-  background: -moz-radial-gradient(rgba(255, 87, 34, 0.2) 0, rgba(255, 87, 34, 0.3) 40%, rgba(255, 87, 34, 0.4) 50%, rgba(255, 87, 34, 0.5) 60%, rgba(255, 87, 34, 0) 70%);
-  background: radial-gradient(rgba(255, 87, 34, 0.2) 0, rgba(255, 87, 34, 0.3) 40%, rgba(255, 87, 34, 0.4) 50%, rgba(255, 87, 34, 0.5) 60%, rgba(255, 87, 34, 0) 70%);
+@media (max-width: 479px) {
+  .header-top .searchform {
+    border-bottom-color: #ff5722;
+  }
 }
 /*---------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-5. Menu Active
+3. Navigation Desktop
 */
-@media (min-width: 800px) {
-  .menu-active .header .logo {
-    color: #fd1100;
-  }
-  .menu-active .header .logo:before {
-    background: #fd1100;
-  }
-  .menu-active .header .logo:after {
+@media (min-width: 1025px) {
+  .nav-horizontal {
     background: #ffffff;
   }
-  .menu-active .navigation .menu > li:hover > a {
+  .nav-horizontal .menu > li:hover > a {
+    color: #ff5722;
+  }
+  .nav-horizontal .menu > li.current > a {
+    color: #ff5722;
+  }
+  .nav-horizontal .menu .sub-menu {
+    background: #ffffff;
+  }
+  .nav-horizontal .menu .sub-menu.single a {
+    color: #435966;
+  }
+  .nav-horizontal .menu .sub-menu.single a:hover {
     background: #ff5722;
     color: #ffffff;
   }
-  .menu-active .navigation .menu > li:hover > a i {
-    color: #ffffff;
+  .nav-horizontal .menu .sub-menu.mega > li a {
+    color: #435966;
+  }
+  .nav-horizontal .menu .sub-menu.mega > li a:hover {
+    color: #ff5722;
   }
 }
 /*---------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-6. Fixed Navbar
+4. Navigation Mobile
 */
-.fixed-navbar {
-  background: #ff5722;
-  color: #ffffff;
-}
-.fixed-navbar .ico-item {
-  color: #ffffff;
-}
-@media (min-width: 1025px) {
-  .fixed-navbar .ico-item:hover {
+@media (max-width: 1024px) {
+  .nav-horizontal .menu > li > a.active {
     color: #ffffff;
+    background: #ff5722;
+  }
+  .nav-horizontal .menu > li.current > a {
+    color: #ffffff;
+    background: #ff5722;
+  }
+  .nav-horizontal .menu .sub-menu .title.active,
+  .nav-horizontal .menu .child-list .title.active,
+  .nav-horizontal .menu .sub-menu a.active,
+  .nav-horizontal .menu .child-list a.active {
+    color: #ffffff;
+    background: #ff5722;
   }
 }
 /*---------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-7. Footer
+5. Footer
 */
 .footer {
   color: rgba(0, 0, 0, 0.7);
@@ -148,7 +125,7 @@ a:focus {
 }
 /*---------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-8. Box Content
+6. Box Content
 */
 .box-content .dropdown.js__drop_down .sub-menu {
   background: #ffffff;
@@ -163,7 +140,7 @@ a:focus {
 }
 /*---------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-9. Data Tables
+7. Data Tables
 */
 .dataTables_wrapper .dataTable .group {
   background-color: #ff5722 !important;
@@ -176,7 +153,7 @@ table.focus-on tbody tr.focused td {
 }
 /*---------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-10. Inbox List
+8. Inbox List
 */
 .inbox-list .name {
   color: #ff5722;
@@ -188,7 +165,7 @@ table.focus-on tbody tr.focused td {
 }
 /*---------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-11. Menu Mobile Button
+9. Menu Mobile Button
 */
 .menu-mobile-button {
   color: #ffffff;
@@ -196,7 +173,7 @@ table.focus-on tbody tr.focused td {
 }
 /*---------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-12. Notice
+10. Notice
 */
 /* Notice List */
 .notice-list .name {
@@ -219,7 +196,7 @@ table.focus-on tbody tr.focused td {
 }
 /*---------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-13. Search Form
+11. Search Form
 */
 @media (min-width: 1025px) {
   .searchform .button-search:hover {
@@ -228,7 +205,7 @@ table.focus-on tbody tr.focused td {
 }
 /*---------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-14. Mail
+12. Mail
 */
 .box-body .nav li.active a {
   background: #ffffff;
@@ -246,7 +223,7 @@ table.focus-on tbody tr.focused td {
 }
 /*---------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-15. Login, Register, ... Form
+13. Login, Register, ... Form
 */
 .frm-single .frm-input .frm-inp:focus {
   border-color: #ff5722;
@@ -262,7 +239,7 @@ table.focus-on tbody tr.focused td {
 }
 /*---------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-16. Pricing Plan
+14. Pricing Plan
 */
 .pricing-table .thead {
   background: #ff5722;
@@ -293,7 +270,7 @@ table.focus-on tbody tr.focused td {
 }
 /*---------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-17. Gallery
+15. Gallery
 */
 .isotope-filter .filter-controls a {
   color: #435966;
@@ -308,7 +285,7 @@ table.focus-on tbody tr.focused td {
 }
 /*---------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-18. User Info
+16. User Info
 */
 .user-info a {
   color: #ff5722;

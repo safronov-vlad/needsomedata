@@ -6,69 +6,68 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>needsomedata</title>
+
+	<title>Home - Ninja Admin Template</title>
+
 	<!-- Main Styles -->
-	<link rel="stylesheet" href="/static/assets/styles/style.min.css">
+	<link rel="stylesheet" href="/static/assets/styles/style-horizontal.min.css">
+
 	<!-- mCustomScrollbar -->
 	<link rel="stylesheet" href="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+
 	<!-- Waves Effect -->
 	<link rel="stylesheet" href="/static/assets/plugin/waves/waves.min.css">
+
 	<!-- Sweet Alert -->
 	<link rel="stylesheet" href="/static/assets/plugin/sweet-alert/sweetalert.css">
+	
 	<!-- Percent Circle -->
 	<link rel="stylesheet" href="/static/assets/plugin/percircle/css/percircle.css">
+
 	<!-- Chartist Chart -->
 	<link rel="stylesheet" href="/static/assets/plugin/chart/chartist/chartist.min.css">
+
 	<!-- FullCalendar -->
 	<link rel="stylesheet" href="/static/assets/plugin/fullcalendar/fullcalendar.min.css">
 	<link rel="stylesheet" href="/static/assets/plugin/fullcalendar/fullcalendar.print.css" media='print'>
+
 	<!-- Color Picker -->
-	<link rel="stylesheet" href="/static/assets/color-switcher/color-switcher.min.css">
 </head>
 
 <body>
-<div class="main-menu">
-	<header class="header">
-		<a href="index.html" class="logo">PMTA-19</a>
-		<button type="button" class="button-close fa fa-times js__menu_close"></button>
-		<div class="user">
-			<a href="#" class="avatar"><img src="http://placehold.it/80x80" alt=""><span class="status online"></span></a>
-			<h5 class="name"><a href="javascript:"></a></h5>
-			<h5 class="position">Жилищник</h5>
-			<!-- /.control-wrap -->
+<header class="fixed-header">
+	<div class="header-top">
+		<div class="container">
+			<div class="pull-left">
+				<a href="index.html" class="logo">PMTA - 19</a>
+			</div>
+			<!-- /.pull-right -->
 		</div>
-		<!-- /.user -->
-	</header>
-	<!-- /.header -->
-	<div class="content">
-
-		<div class="navigation">
-			<h5 class="title">Меню</h5>
-			<!-- /.title -->
-
-			<!-- /.menu js__accordion -->
+		<!-- /.container -->
+	</div>
+	<!-- /.header-top -->
+	<nav class="nav-horizontal">
+		<button type="button" class="menu-close hidden-on-desktop js__close_menu"><i class="fa fa-times"></i><span>CLOSE</span></button>
+		<div class="container">
+			<ul class="menu">
+				<li class="current">
+					<a href="index.html"><i class="ico fa fa-home"></i><span>Главная</span></a>
+				</li>
+			</ul>
+			<!-- /.menu -->
 		</div>
-		<!-- /.navigation -->
-	</div>
-	<!-- /.content -->
-</div>
-<!-- /.main-menu -->
-
-<div class="fixed-navbar">
-	<div class="pull-left">
-		<!-- /.page-title -->
-	</div>
-	<!-- /.pull-left -->
-
-	<!-- /.pull-right -->
-</div>
-<!-- /.fixed-navbar -->
+		<!-- /.container -->
+	</nav>
+	<!-- /.nav-horizontal -->
+</header>
+<!-- /.fixed-header -->
 
 <div id="wrapper">
-	<div class="main-content">
+	<div class="main-content container">
 		<div class="row small-spacing">
 			<div class="col-xs-12">
 				<div class="box-content">
+					<h4 class="box-title">Авторизация</h4>
                     {% block content %}
                     {% endblock %}
 				</div>
@@ -76,26 +75,15 @@
 			</div>
 			<!-- /.col-lg-6 col-xs-12 -->
 		</div>
-		<!-- /.row -->
-		<footer class="footer">
-{#			<ul class="list-inline">#}
-{#				<li>2016 © NinjaAdmin.</li>#}
-{#				<li><a href="#">Privacy</a></li>#}
-{#				<li><a href="#">Terms</a></li>#}
-{#				<li><a href="#">Help</a></li>#}
-{#			</ul>#}
-		</footer>
 	</div>
 	<!-- /.main-content -->
-    {% block popups %}
-    {% endblock %}
 </div><!--/#wrapper -->
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 		<script src="/static/assets/script/html5shiv.min.js"></script>
 		<script src="/static/assets/script/respond.min.js"></script>
 	<![endif]-->
-	<!--
+	<!-- 
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="/static/assets/scripts/jquery.min.js"></script>
@@ -124,5 +112,7 @@
 	<script src="/static/assets/scripts/fullcalendar.init.js"></script>
 
 	<script src="/static/assets/scripts/main.min.js"></script>
+	<script src="/static/assets/scripts/horizontal-menu.min.js"></script>
+	<script src="/static/assets/color-switcher/color-switcher.min.js"></script>
 </body>
 </html>

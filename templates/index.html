@@ -1,5 +1,6 @@
 {% extends '_base.html' %}
 {% block content %}
+<h4 class="box-title">Авторизация</h4>
 <div class="col-md-6 margin-bottom-20">
     <ul class="nav nav-tabs nav-justified" id="myTabs-justified" role="tablist">
         <li role="presentation" class="active"><a href="#home-justified" id="home-tab-justified" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Пользователь</a></li>
@@ -8,36 +9,45 @@
     <!-- /.nav-tabs -->
     <div class="tab-content" id="myTabContent-justified">
         <div class="tab-pane fade in active" role="tabpanel" id="home-justified" aria-labelledby="home-tab-justified">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Ваша почта</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Ваш пароль</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-info btn-sm waves-effect waves-light">Вход</button>
-            </div>
-            <div class="form-group">
-                <a style="text-decoration: underline!important;" href="#">Регистрация</a>
-            </div>
+            <form method="POST" action="/login/">
+                <input type="hidden" name="type" value="userlow">
+                <input type="hidden" name="csrfmiddlewaretoken" value="{{ c.csrf_token }}">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ваша почта</label>
+                    <input type="text" name="email" class="form-control" id="exampleInputEmail1" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ваш пароль</label>
+                    <input type="password" class="form-control" id="exampleInputEmail1" placeholder="">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-info btn-sm waves-effect waves-light">Вход</button>
+                </div>
+                <div class="form-group">
+                    <a style="text-decoration: underline!important;" href="#">Регистрация</a>
+                </div>
+
+            </form>
         </div>
         <div class="tab-pane fade" role="tabpanel" id="profile-justified" aria-labelledby="profile-tab-justified">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Ваша почта</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Ваш пароль</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-info btn-sm waves-effect waves-light">Вход</button>
-            </div>
-            <div class="form-group">
-                <a style="text-decoration: underline!important;" href="#">Регистрация</a>
-            </div>
+            <form method="POST" action="/login/">
+                <input type="hidden" name="type" value="bussinesuser">
+                <input type="hidden" name="csrfmiddlewaretoken" value="{{ c.csrf_token }}">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ваша почта</label>
+                    <input type="text" name="email" class="form-control" id="exampleInputEmail1" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Ваш пароль</label>
+                    <input type="password" class="form-control" id="exampleInputEmail1" placeholder="">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-info btn-sm waves-effect waves-light">Вход</button>
+                </div>
+                <div class="form-group">
+                    <a style="text-decoration: underline!important;" href="#">Регистрация</a>
+                </div>
+            </form>
         </div>
     </div>
     <!-- /.tab-content -->

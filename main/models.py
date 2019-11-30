@@ -24,7 +24,7 @@ class Zhilishniki(models.Model):
 
 
 class UserLow(models.Model):
-    fio = models.CharField(max_length=200, verbose_name="ФИО")
+    name = models.CharField(max_length=200, verbose_name="ФИО")
     phone = models.CharField(max_length=200, verbose_name="Телефон")
     zh_id = models.ForeignKey(Zhilishniki, models.CASCADE, verbose_name="Жилищник", related_name="zhilishnik_users")
 
@@ -33,7 +33,7 @@ class UserLow(models.Model):
         verbose_name_plural = "Юзеры"
 
     def __str__(self):
-        return self.fio
+        return self.name
 
 
 class UserBussines(models.Model):

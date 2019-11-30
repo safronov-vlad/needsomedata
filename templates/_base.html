@@ -39,8 +39,11 @@
 	<div class="header-top">
 		<div class="container">
 			<div class="pull-left">
-				<a href="index.html" class="logo">PMTA - 19</a>
+				<a href="/" class="logo">PMTA - 19</a>
 			</div>
+            <div class="pull-right">
+                <span style="line-height: 60px">{% if user %}{{ user.name }}{% endif %}</span>
+            </div>
 			<!-- /.pull-right -->
 		</div>
 		<!-- /.container -->
@@ -51,7 +54,7 @@
 		<div class="container">
 			<ul class="menu">
 				<li class="current">
-					<a href="index.html"><i class="ico fa fa-home"></i><span>Главная</span></a>
+					<a href="/"><i class="ico fa fa-home"></i><span>Главная</span></a>
 				</li>
 			</ul>
 			<!-- /.menu -->
@@ -67,7 +70,6 @@
 		<div class="row small-spacing">
 			<div class="col-xs-12">
 				<div class="box-content">
-					<h4 class="box-title">Авторизация</h4>
                     {% block content %}
                     {% endblock %}
 				</div>

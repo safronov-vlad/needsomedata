@@ -84,7 +84,7 @@ def map(request):
     template = loader.get_template('map.html')
 
     if request.is_ajax():
-        i = requests.get('https://api.gismeteo.net/v2/weather/current/?latitude=55.863894&longitude=37.620923', headers={'X-Gismeteo-Token': '5db8475437e484.49845707'}).json()
+        i = requests.get('https://api.gismeteo.net/v2/weather/current/?latitude=' + request.POST.get('lat', '') + '&longitude='+ request.POST.get('lon', ''), headers={'X-Gismeteo-Token': '5db8475437e484.49845707'}).json()
         return HttpResponse(i['response']['temperature']['air']['C'])
 
     context_data = default_context(request)

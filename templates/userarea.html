@@ -2,6 +2,7 @@
 {% block content %}
 <h4 class="box-title">Личный кабинет</h4>
 <div class="col-md-6 margin-bottom-20">
+    {% if user_type == 'userlow' %}
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -22,5 +23,31 @@
         {% endfor %}
         </tbody>
     </table>
+    {% else %}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ФИО</th>
+                <th>Кол-во лотов</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for i in users %}
+            <tr>
+                <td>{{ i.name }}</td>
+                <td>{{ i.user_trichcodes.all|length }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+        <div class="col-md-12">
+            <h4>Общее кол-во отходов:</h4>
+            <ul>
+                {% for i in q %}
+                <li>{{ i.lot_type }} - {{ i.weight__sum }} кг.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
 </div>
 {% endblock %}

@@ -3,12 +3,15 @@ from django.http import HttpResponse
 from django.template import RequestContext, loader
 from django.shortcuts import redirect
 from django.template.context_processors import csrf
+from django.db.models import Sum
 
 from .models import *
 
 def default_context(request):
+
     c = {}
     c.update(csrf(request))
+
     return {'c': c}
 
 def check_login(request):
@@ -52,10 +55,26 @@ def userarea(request):
 
     context_data.update({
         'user': user,
+        'user_type': request.session['user_type']
     })
 
-    context_data.update({
-        'trichcodes': user.user_trichcodes.all().order_by('-pk')
-    })
+    if request.session['user_type'] == 'userlow':
+        context_data.update({
+            'trichcodes': user.user_trichcodes.all().order_by('-pk')
+        })
+    else:
+
+        q = Trichcode.objects.filter(user_low__pk__in=user.zhilishnik_users.all().values_list('pk', flat=True))
+
+        q = q.values('lot_type').annotate(Sum('weight')).order_by('-weight__sum')
+
+        for i in q:
+            i['lot_type'] = LOT_TYPES[i['lot_type']][1]
+
+
+        context_data.update({
+            'users': user.zhilishnik_users.all(),
+            'q': q,
+        })
 
     return HttpResponse(template.render(context_data))

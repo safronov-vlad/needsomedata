@@ -78,3 +78,10 @@ def userarea(request):
         })
 
     return HttpResponse(template.render(context_data))
+
+def map(request):
+    template = loader.get_template('map.html')
+
+    context_data = default_context(request)
+
+    return HttpResponse(template.render(context_data))

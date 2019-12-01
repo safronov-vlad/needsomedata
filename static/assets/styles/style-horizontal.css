@@ -45,7 +45,7 @@ body {
     -moz-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
-    background: white;
+    background: none;
     overflow: hidden;
     transition: transform 0.4s ease;
     -webkit-transition: -webkit-transform 0.4s ease;
@@ -1069,7 +1069,6 @@ Version 2.0
     background-image: url(/static/assets/styles/baner.jpg);
     background-repeat: no-repeat;
     background-size: 100% 367px;
-    padding: 120px 0 0;
 }
 
 @media (max-width: 1024px) {
@@ -1152,7 +1151,7 @@ Version 2.0
 }
 
 .main_page_wrapper {
-    padding: 380px 0 0 !important;
+    padding: 350px 0 0;
 }
 
 .header-top .ico-item {

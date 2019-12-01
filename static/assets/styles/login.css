@@ -39,7 +39,16 @@
 #wrapper {
     background-image: url(/static/assets/styles/baner.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 420px;
+    padding: 120px 0 0;
+    background-size: 100% 485px;
+}
+
+.tologo{
+    display: block;
+}
+
+.box-content {
+    background: transparent;
 }
 
 body {

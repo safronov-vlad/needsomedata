@@ -19,10 +19,19 @@ Version 2.0
 */
 html,
 body {
+    background-image: url(/static/assets/styles/baner.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 367px;
     position: relative;
     height: 100%;
     background: #f5f7fa;
     color: #505458;
+}
+
+.top-header{
+    position: absolute;
+    z-index: 999;
+    left: calc((100% - 1070px) / 2);
 }
 
 #wrapper {

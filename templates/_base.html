@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="author" content="">
 
-    <title>Home - Ninja Admin Template</title>
+    <title>MPTA  19 </title>
 
     <!-- Main Styles -->
     <link rel="stylesheet" href="/static/assets/styles/style-horizontal.css">
@@ -32,6 +33,8 @@
     <link rel="stylesheet" href="/static/assets/plugin/fullcalendar/fullcalendar.print.css" media='print'>
 
     <!-- Color Picker -->
+
+
 </head>
 
 <body>
@@ -44,7 +47,7 @@
     <img class="peoples-img" src="/static/assets/styles/p.png">
 </div>
 {% if user %}
-    <header class="fixed-header">
+    <header class="top-header">
         <div class="header-top">
             <div class="container">
                 <div class="pull-left">
@@ -68,7 +71,7 @@
     <div class="main-content container">
         <div class="row small-spacing">
             <div class="col-xs-12">
-                <div class="box-content"
+                <div class="box-content" style="    border: none; -webkit-box-shadow: none; box-shadow: none;"
                         {% if not user %}{{ 'style="background: none !important; box-shadow:none;"' }}{% endif %}>
                     {% block content %}
                     {% endblock %}
@@ -116,5 +119,7 @@
 <script src="/static/assets/scripts/main.min.js"></script>
 <script src="/static/assets/scripts/horizontal-menu.min.js"></script>
 <script src="/static/assets/color-switcher/color-switcher.min.js"></script>
+{% block scripts %}
+{% endblock %}
 </body>
 </html>

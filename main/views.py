@@ -84,4 +84,18 @@ def map(request):
 
     context_data = default_context(request)
 
+    user = check_login(request)
+
+    try:
+        if not request.session['user']:
+            return redirect('/')
+    except:
+        request.session['user'] = False
+        return redirect('/')
+
+    context_data.update({
+        'user': user,
+        'user_type': request.session['user_type']
+    })
+
     return HttpResponse(template.render(context_data))

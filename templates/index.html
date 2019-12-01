@@ -17,11 +17,6 @@
 
     <link rel="stylesheet" href="/static/assets/styles/login.css">
 
-    <div class="tologo">
-        <img class='qrl' style="height: 150px" src="/static/assets/styles/logo_white.png">
-        <h3 class="message-title">Экологика</h3>
-    </div>
-
     <div class="col-md-7">
         <ul class="nav nav-tabs nav-justified" id="myTabs-justified" role="tablist">
             <li role="presentation" class="tab_box active"><a href="#home-justified" onClick="change()"
@@ -40,6 +35,11 @@
                 <form method="POST" action="/login/">
                     <input type="hidden" name="type" value="userlow">
                     <input type="hidden" name="csrfmiddlewaretoken" value="{{ c.csrf_token }}">
+
+                    <div class="form-group logo_line" {% if user %}{{ 'style="display:none;"' }}{% endif %}>
+                        <img src="static/assets/styles/qr-code-2.png">
+                        <h3 class="logo_title">Экологика</h3>
+                    </div>
 
                     <div class="form-group">
                         <input type="text" name="email" class="form-control" id="exampleInputEmail1"
@@ -62,7 +62,10 @@
                 <form method="POST" action="/login/">
                     <input type="hidden" name="type" value="bussinesuser">
                     <input type="hidden" name="csrfmiddlewaretoken" value="{{ c.csrf_token }}">
-
+                    <div class="form-group logo_line">
+                        <img src="static/assets/styles/qr-code-2.png">
+                        <h3 class="logo_title">Экологика</h3>
+                    </div>
                     <div class="form-group">
                         <input type="text" name="email" class="form-control" id="exampleInputEmail1"
                                placeholder="Введите логин">

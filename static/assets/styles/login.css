@@ -8,6 +8,11 @@
     border-top: 0px;
 }
 
+.nav-top {
+    color: white;
+    margin: 20px;
+}
+
 .tab_box {
     font-size: 18px;
     line-height: 32px;
@@ -22,15 +27,17 @@
 }
 
 #wrapper {
-    background-image: url(/static/assets/styles/1.svg);
+    background-image: url(/static/assets/styles/baner.jpg);
+        background-repeat: no-repeat;
+    background-size: 100% 60%;
 }
 
 body {
-    background-image: url(/static/assets/styles/1.svg);
+    background: white !important;
 }
 
 .tab_box.active {
-    font-size: 18px;
+    font-size: 19px;
     line-height: 32px;
     padding: 7px 20px;
     /* font-family: Roboto; */
@@ -62,7 +69,6 @@ body {
     font-size: 24px;
     color: #3e3d3d;
     font-weight: 600;
-    margin-top: -30px;
     margin-bottom: 50px;
 }
 
@@ -100,7 +106,7 @@ body {
     border-color: none;
     background: none;
     text-decoration: underline !important;
-    color: yellow!important;
+    color: yellow !important;
 }
 
 .reg_string a:hover {

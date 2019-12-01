@@ -10,7 +10,7 @@
 	<title>Home - Ninja Admin Template</title>
 
 	<!-- Main Styles -->
-	<link rel="stylesheet" href="/static/assets/styles/style-horizontal.min.css">
+	<link rel="stylesheet" href="/static/assets/styles/style-horizontal.css">
 
 	<!-- mCustomScrollbar -->
 	<link rel="stylesheet" href="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
@@ -20,7 +20,7 @@
 
 	<!-- Sweet Alert -->
 	<link rel="stylesheet" href="/static/assets/plugin/sweet-alert/sweetalert.css">
-	
+
 	<!-- Percent Circle -->
 	<link rel="stylesheet" href="/static/assets/plugin/percircle/css/percircle.css">
 
@@ -35,12 +35,19 @@
 </head>
 
 <body>
+<div class="peoples">
+    <img class="peoples" src="/static/assets/styles/mans.svg">
+</div>
 {% if user %}
 <header class="fixed-header">
 	<div class="header-top">
 		<div class="container">
 			<div class="pull-left">
-				<a href="/" class="logo">PMTA - 19</a>
+				<a href="/" class="logo">Экологика</a>
+                <a href="/" class="nav-top">Экологика</a>
+                <a href="/" class="nav-top">Экологика</a>
+                <a href="/" class="nav-top">Экологика</a>
+                <a href="/" class="nav-top">Экологика</a>
 			</div>
             <div class="pull-right">
                 <span style="line-height: 60px">{% if user %}{{ user.name }}{% endif %}</span>
@@ -50,19 +57,6 @@
 		<!-- /.container -->
 	</div>
 	<!-- /.header-top -->
-	<nav class="nav-horizontal">
-		<button type="button" class="menu-close hidden-on-desktop js__close_menu"><i class="fa fa-times"></i><span>CLOSE</span></button>
-		<div class="container">
-			<ul class="menu">
-				<li class="current">
-					<a href="/"><i class="ico fa fa-home"></i><span>Главная</span></a>
-				</li>
-			</ul>
-			<!-- /.menu -->
-		</div>
-		<!-- /.container -->
-	</nav>
-	<!-- /.nav-horizontal -->
 </header>
 <!-- /.fixed-header -->
 {% endif %}
@@ -86,7 +80,7 @@
 		<script src="/static/assets/script/html5shiv.min.js"></script>
 		<script src="/static/assets/script/respond.min.js"></script>
 	<![endif]-->
-	<!-- 
+	<!--
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="/static/assets/scripts/jquery.min.js"></script>

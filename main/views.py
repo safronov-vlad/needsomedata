@@ -4,6 +4,7 @@ from django.template import RequestContext, loader
 from django.shortcuts import redirect
 from django.template.context_processors import csrf
 from django.db.models import Sum
+import requests
 
 from .models import *
 
@@ -82,7 +83,18 @@ def userarea(request):
 def map(request):
     template = loader.get_template('map.html')
 
+    if request.is_ajax():
+        i = requests.get('https://api.gismeteo.net/v2/weather/current/?latitude=55.863894&longitude=37.620923', headers={'X-Gismeteo-Token': '5db8475437e484.49845707'}).json()
+        return HttpResponse(i['response']['temperature']['air']['C'])
+
     context_data = default_context(request)
+
+    try:
+        if not request.session['user']:
+            return redirect('/')
+    except:
+        request.session['user'] = False
+        return redirect('/')
 
     user = check_login(request)
 

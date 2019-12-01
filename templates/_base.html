@@ -40,7 +40,7 @@
 <body>
 <div class="peoples">
     <div class="tologo">
-        <img class='qrl' style="height: 150px" src="/static/assets/styles/logo_white.png">
+        <a href="/"><img class='qrl' style="height: 150px" src="/static/assets/styles/logo_white.png"></a>
         <h3 class="message-title">Каждый может
             сделать Москву чище!</h3>
     </div>
@@ -52,9 +52,8 @@
             <div class="container">
                 <div class="pull-left">
                     <a href="/" class="logo">Чистый город</a>
-                    <a href="/" class="nav-top">Управление отходами</a>
-                    <a href="/" class="nav-top">Экологика</a>
-                    <a href="/" class="nav-top">Экологика</a>
+                    <a href="/" class="nav-top">Личный кабинет</a>
+                    <a href="/" class="nav-top">Карта событий</a>
                 </div>
                 <div class="pull-right">
                     <span style="line-height: 60px">{% if user %}{{ user.name }}{% endif %}</span>

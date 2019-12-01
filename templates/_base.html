@@ -1,115 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<meta name="description" content="">
-	<meta name="author" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-	<title>Home - Ninja Admin Template</title>
+    <title>Home - Ninja Admin Template</title>
 
-	<!-- Main Styles -->
-	<link rel="stylesheet" href="/static/assets/styles/style-horizontal.css">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="/static/assets/styles/style-horizontal.css">
 
-	<!-- mCustomScrollbar -->
-	<link rel="stylesheet" href="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- mCustomScrollbar -->
+    <link rel="stylesheet" href="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
 
-	<!-- Waves Effect -->
-	<link rel="stylesheet" href="/static/assets/plugin/waves/waves.min.css">
+    <!-- Waves Effect -->
+    <link rel="stylesheet" href="/static/assets/plugin/waves/waves.min.css">
 
-	<!-- Sweet Alert -->
-	<link rel="stylesheet" href="/static/assets/plugin/sweet-alert/sweetalert.css">
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="/static/assets/plugin/sweet-alert/sweetalert.css">
 
-	<!-- Percent Circle -->
-	<link rel="stylesheet" href="/static/assets/plugin/percircle/css/percircle.css">
+    <!-- Percent Circle -->
+    <link rel="stylesheet" href="/static/assets/plugin/percircle/css/percircle.css">
 
-	<!-- Chartist Chart -->
-	<link rel="stylesheet" href="/static/assets/plugin/chart/chartist/chartist.min.css">
+    <!-- Chartist Chart -->
+    <link rel="stylesheet" href="/static/assets/plugin/chart/chartist/chartist.min.css">
 
-	<!-- FullCalendar -->
-	<link rel="stylesheet" href="/static/assets/plugin/fullcalendar/fullcalendar.min.css">
-	<link rel="stylesheet" href="/static/assets/plugin/fullcalendar/fullcalendar.print.css" media='print'>
+    <!-- FullCalendar -->
+    <link rel="stylesheet" href="/static/assets/plugin/fullcalendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="/static/assets/plugin/fullcalendar/fullcalendar.print.css" media='print'>
 
-	<!-- Color Picker -->
+    <!-- Color Picker -->
 </head>
 
 <body>
 <div class="peoples">
-    <img class="peoples" src="/static/assets/styles/mans.svg">
+    <div class="tologo">
+        <img class='qrl' style="height: 150px" src="/static/assets/styles/logo_white.png">
+        <h3 class="message-title">Каждый может
+            сделать Москву чище!</h3>
+    </div>
+    <img class="peoples-img" src="/static/assets/styles/p.png">
 </div>
 {% if user %}
-<header class="fixed-header">
-	<div class="header-top">
-		<div class="container">
-			<div class="pull-left">
-				<a href="/" class="logo">Экологика</a>
-                <a href="/" class="nav-top">Экологика</a>
-                <a href="/" class="nav-top">Экологика</a>
-                <a href="/" class="nav-top">Экологика</a>
-                <a href="/" class="nav-top">Экологика</a>
-			</div>
-            <div class="pull-right">
-                <span style="line-height: 60px">{% if user %}{{ user.name }}{% endif %}</span>
+    <header class="fixed-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="pull-left">
+                    <a href="/" class="logo">Чистый город</a>
+                    <a href="/" class="nav-top">Управление отходами</a>
+                    <a href="/" class="nav-top">Экологика</a>
+                    <a href="/" class="nav-top">Экологика</a>
+                </div>
+                <div class="pull-right">
+                    <span style="line-height: 60px">{% if user %}{{ user.name }}{% endif %}</span>
+                </div>
+                <!-- /.pull-right -->
             </div>
-			<!-- /.pull-right -->
-		</div>
-		<!-- /.container -->
-	</div>
-	<!-- /.header-top -->
-</header>
-<!-- /.fixed-header -->
+            <!-- /.container -->
+        </div>
+        <!-- /.header-top -->
+    </header>
+    <!-- /.fixed-header -->
 {% endif %}
-<div id="wrapper">
-	<div class="main-content container">
-		<div class="row small-spacing">
-			<div class="col-xs-12">
-				<div class="box-content" {% if not user %}{{ 'style="background: none !important; box-shadow:none;"' }}{% endif %}>
+<div id="wrapper" class="main_page_wrapper">
+    <div class="main-content container">
+        <div class="row small-spacing">
+            <div class="col-xs-12">
+                <div class="box-content"
+                        {% if not user %}{{ 'style="background: none !important; box-shadow:none;"' }}{% endif %}>
                     {% block content %}
                     {% endblock %}
-				</div>
-				<!-- /.box-content -->
-			</div>
-			<!-- /.col-lg-6 col-xs-12 -->
-		</div>
-	</div>
-	<!-- /.main-content -->
+                </div>
+                <!-- /.box-content -->
+            </div>
+            <!-- /.col-lg-6 col-xs-12 -->
+        </div>
+    </div>
+    <!-- /.main-content -->
 </div><!--/#wrapper -->
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
 		<script src="/static/assets/script/html5shiv.min.js"></script>
 		<script src="/static/assets/script/respond.min.js"></script>
 	<![endif]-->
-	<!--
-	================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="/static/assets/scripts/jquery.min.js"></script>
-	<script src="/static/assets/scripts/modernizr.min.js"></script>
-	<script src="/static/assets/plugin/bootstrap/js/bootstrap.min.js"></script>
-	<script src="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script src="/static/assets/plugin/nprogress/nprogress.js"></script>
-	<script src="/static/assets/plugin/sweet-alert/sweetalert.min.js"></script>
-	<script src="/static/assets/plugin/waves/waves.min.js"></script>
-	<!-- Full Screen Plugin -->
-	<script src="/static/assets/plugin/fullscreen/jquery.fullscreen-min.js"></script>
+<!--
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/static/assets/scripts/jquery.min.js"></script>
+<script src="/static/assets/scripts/modernizr.min.js"></script>
+<script src="/static/assets/plugin/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/static/assets/plugin/nprogress/nprogress.js"></script>
+<script src="/static/assets/plugin/sweet-alert/sweetalert.min.js"></script>
+<script src="/static/assets/plugin/waves/waves.min.js"></script>
+<!-- Full Screen Plugin -->
+<script src="/static/assets/plugin/fullscreen/jquery.fullscreen-min.js"></script>
 
-	<!-- Percent Circle -->
-	<script src="/static/assets/plugin/percircle/js/percircle.js"></script>
+<!-- Percent Circle -->
+<script src="/static/assets/plugin/percircle/js/percircle.js"></script>
 
-	<!-- Google Chart -->
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- Google Chart -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-	<!-- Chartist Chart -->
-	<script src="/static/assets/plugin/chart/chartist/chartist.min.js"></script>
-	<script src="/static/assets/scripts/chart.chartist.init.min.js"></script>
+<!-- Chartist Chart -->
+<script src="/static/assets/plugin/chart/chartist/chartist.min.js"></script>
+<script src="/static/assets/scripts/chart.chartist.init.min.js"></script>
 
-	<!-- FullCalendar -->
-	<script src="/static/assets/plugin/moment/moment.js"></script>
-	<script src="/static/assets/plugin/fullcalendar/fullcalendar.min.js"></script>
-	<script src="/static/assets/scripts/fullcalendar.init.js"></script>
+<!-- FullCalendar -->
+<script src="/static/assets/plugin/moment/moment.js"></script>
+<script src="/static/assets/plugin/fullcalendar/fullcalendar.min.js"></script>
+<script src="/static/assets/scripts/fullcalendar.init.js"></script>
 
-	<script src="/static/assets/scripts/main.min.js"></script>
-	<script src="/static/assets/scripts/horizontal-menu.min.js"></script>
-	<script src="/static/assets/color-switcher/color-switcher.min.js"></script>
+<script src="/static/assets/scripts/main.min.js"></script>
+<script src="/static/assets/scripts/horizontal-menu.min.js"></script>
+<script src="/static/assets/color-switcher/color-switcher.min.js"></script>
 </body>
 </html>

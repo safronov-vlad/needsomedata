@@ -1,10 +1,8 @@
 {% extends '_base.html' %}
 {% block content %}
     <link rel="stylesheet" href="/static/assets/styles/login.css">
-    <div>
-        <h3 class="message-title">Каждый может
-            сделать Москву чище!</h3>
-    </div>
+    <h3 class="message-title">Каждый может
+        сделать Москву чище!</h3>
     <div class="col-md-3"></div>
     <div class="col-md-6 margin-top-50">
 
@@ -25,6 +23,10 @@
                 <form method="POST" action="/login/">
                     <input type="hidden" name="type" value="userlow">
                     <input type="hidden" name="csrfmiddlewaretoken" value="{{ c.csrf_token }}">
+                    <div class="form-group logo_line">
+                        <img src="static/assets/styles/1.svg">
+                        <h3 class="logo_title">Экологика</h3>
+                    </div>
                     <div class="form-group">
                         <input type="text" name="email" class="form-control" id="exampleInputEmail1"
                                placeholder="Введите логин">
@@ -40,12 +42,17 @@
                     <div class="form-group reg_string">
                         <a style="text-decoration: underline!important;" href="#">Зарегистрироваться</a>
                     </div>
+
                 </form>
             </div>
             <div class="tab-pane fade" role="tabpanel" id="profile-justified" aria-labelledby="profile-tab-justified">
                 <form method="POST" action="/login/">
                     <input type="hidden" name="type" value="bussinesuser">
                     <input type="hidden" name="csrfmiddlewaretoken" value="{{ c.csrf_token }}">
+                    <div class="form-group logo_line">
+                        <img src="static/assets/styles/qr-code-2.png">
+                        <h3 class="logo_title">Экологика</h3>
+                    </div>
                     <div class="form-group">
                         <input type="text" name="email" class="form-control" id="exampleInputEmail1"
                                placeholder="Введите логин">

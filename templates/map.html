@@ -1,4 +1,11 @@
 {% extends '_base.html' %}
+{% block header_logo %}
+<div class="tologo">
+    <a href="/"><img class='qrl' style="height: 150px" src="/static/assets/styles/logo_white.png"></a>
+    <h3 class="message-title">Каждый может
+        сделать Москву чище!</h3>
+</div>
+{% endblock %}
 {% block content %}
     <div class="col-md-12 margin-bottom-20">
         <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=77a90f7b-5d09-4238-8101-a48ec6e6ba16"
@@ -107,4 +114,19 @@
     </style>
 {% endblock %}
 {% block scripts %}
+    <script>
+    $(document).ready(function(){
+
+        $.ajax({
+            url: "https://api.gismeteo.net/v2/weather/current/?latitude=55.863894&longitude=37.620923",
+            method: "GET",
+            headers: {
+                'X-Gismeteo-Token': '5db8475437e484.4984570'
+            },
+            success: function (data, textStatus){
+                console.log(data)
+            }
+        })
+    })
+    </script>
 {% endblock %}

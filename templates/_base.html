@@ -39,6 +39,8 @@
 
 <body>
 <div class="peoples">
+    {% block header_logo %}
+    {% endblock %}
     <img class="peoples-img" src="/static/assets/styles/p.png">
 </div>
 {% if user %}
@@ -47,8 +49,8 @@
             <div class="container">
                 <div class="pull-left">
                     <a href="/" class="logo">Чистый город</a>
-                    <a href="/" class="nav-top">Личный кабинет</a>
-                    <a href="/" class="nav-top">Карта событий</a>
+                    <a href="/userarea/" class="nav-top">Личный кабинет</a>
+                    <a href="/map/" class="nav-top">Карта событий</a>
                 </div>
                 <div class="pull-right">
                     <span style="line-height: 60px">{% if user %}{{ user.name }}{% endif %}</span>
